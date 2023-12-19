@@ -1,0 +1,19 @@
+$dark: #1e1e1e;
+$light: #efefef;
+$azmog: #8000ff;
+
+@import "../node_modules/bootstrap/scss/_functions.scss";
+@import "../node_modules/bootstrap/scss/_variables.scss";
+
+$custom-theme-colors: (
+	"azmog": $azmog,
+);
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+body {
+	background: rgb(13, 5, 31);
+	background: linear-gradient(69deg, rgba(13, 5, 31, 1) 15%, rgba(50, 14, 85, 1) 50%, rgba(52, 7, 56, 1) 86%);
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";
