@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"compilateur": "sass --watch css/style.scss css/style.css"
+		"csscompile": "sass --watch ./css/style.scss ./css/style.css"
 	},
 	"keywords": [],
 	"author": "Adam Marzuk",

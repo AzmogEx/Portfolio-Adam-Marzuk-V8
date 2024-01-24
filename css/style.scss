@@ -17,3 +17,23 @@ body {
 }
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+.section {
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.container {
+	text-align: center;
+}
+
+.intro-wrap {
+	text-align: left;
+	flex-flow: column;
+	align-content: center;
+	justify-content: flex-start;
+	align-items: center;
+	margin-top: 100px;
+	margin-bottom: 181px;
+	display: flex;
+}
