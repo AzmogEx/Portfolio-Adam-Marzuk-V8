@@ -5,6 +5,8 @@ $azmog: #8000ff;
 @import "../node_modules/bootstrap/scss/_functions.scss";
 @import "../node_modules/bootstrap/scss/_variables.scss";
 
+@import url("https://fonts.cdnfonts.com/css/varela-round-3");
+
 $custom-theme-colors: (
 	"azmog": $azmog,
 );
@@ -16,15 +18,30 @@ body {
 	background: linear-gradient(69deg, rgba(13, 5, 31, 1) 15%, rgba(50, 14, 85, 1) 50%, rgba(52, 7, 56, 1) 86%);
 }
 
+body::-webkit-scrollbar {
+	width: 5px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+	background: $dark; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+	border-radius: 10px; /* roundness of the scroll thumb */
+	border: 3px solid $azmog; /* creates padding around scroll thumb */
+}
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+.btn {
+	border-radius: 1.5em;
+}
 
 .section {
 	margin-left: 30px;
 	margin-right: 30px;
-}
-
-.container {
-	text-align: center;
 }
 
 .intro-wrap {
@@ -36,4 +53,69 @@ body {
 	margin-top: 100px;
 	margin-bottom: 181px;
 	display: flex;
+	overflow-x: hidden; /* Interdit le défilement horizontale */
+}
+
+.titre-adam-h1 {
+	font-family: "Varela Round", sans-serif;
+	font-size: 80px;
+	font-style: normal;
+	line-height: 80px;
+}
+
+.box-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.box-text {
+	background-color: #7611a6;
+	border-radius: 20px;
+	padding: 5px;
+	margin-right: 10px; /* Ajoutez de la marge à droite pour espacer du côté de l'image */
+	color: #fff;
+	display: flex;
+	align-items: center;
+	font-family: "Varela Round", sans-serif;
+}
+
+.button-cv {
+	margin-top: 5px;
+	border-radius: 20px;
+	padding: 8px;
+	margin-right: 10px; /* Ajoutez de la marge à droite pour espacer du côté de l'image */
+	color: #fff;
+	display: flex;
+	align-items: center;
+	font-family: "Varela Round", sans-serif;
+	background-color: #3898ec;
+	text-decoration: none;
+}
+.intro-wrap {
+	position: relative;
+	text-align: left;
+	flex-flow: column;
+	align-content: center;
+	justify-content: flex-start;
+	align-items: center;
+	margin-top: 100px;
+	margin-bottom: 181px;
+	display: flex;
+	overflow-x: hidden;
+}
+
+.photo-adam {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-top: 10px;
+	border-radius: 20px;
+}
+
+@media (max-width: 767px) {
+	.photo-adam {
+		position: static;
+		margin-top: 20px; /* Ajustez la marge selon vos besoins pour la version mobile */
+	}
 }
