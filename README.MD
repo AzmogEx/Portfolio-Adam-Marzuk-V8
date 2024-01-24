@@ -1,11 +1,9 @@
-<img src="https://i.imgur.com/2wOMYmo.gif" />
-
 ## Installation
 
 ### Cloner le projet
 
 ```shell
-git clone https://github.com/Bts-Sio-CCI/FlowTechAP2.git
+git clone https://github.com/AzmogEx/Portfolio-Adam-Marzuk-V8.git
 ```
 
 ### Installer le compilateur SASS
