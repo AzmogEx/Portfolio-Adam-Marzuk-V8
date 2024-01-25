@@ -3,6 +3,7 @@
 body {
   background: rgb(13, 5, 31);
   background: linear-gradient(69deg, rgb(13, 5, 31) 15%, rgb(50, 14, 85) 50%, rgb(52, 7, 56) 86%);
+  font-family: "Varela Round", sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -11977,18 +11978,6 @@ textarea.form-control-lg {
   margin-right: 30px;
 }
 
-.intro-wrap {
-  text-align: left;
-  flex-flow: column;
-  align-content: center;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 100px;
-  margin-bottom: 181px;
-  display: flex;
-  overflow-x: hidden; /* Interdit le défilement horizontale */
-}
-
 .titre-adam-h1 {
   font-family: "Varela Round", sans-serif;
   font-size: 80px;
@@ -12013,6 +12002,10 @@ textarea.form-control-lg {
   font-family: "Varela Round", sans-serif;
 }
 
+.text-anim {
+  font-size: 35px;
+}
+
 .button-cv {
   margin-top: 5px;
   border-radius: 20px;
@@ -12024,6 +12017,7 @@ textarea.form-control-lg {
   font-family: "Varela Round", sans-serif;
   background-color: #3898ec;
   letter-spacing: 2px;
+  font-size: 22px;
   text-transform: uppercase;
   box-shadow: 0 0 60px -10px #cd106e;
   transition: all 0.3s;
@@ -12042,24 +12036,167 @@ textarea.form-control-lg {
   justify-content: flex-start;
   align-items: center;
   margin-top: 100px;
-  margin-bottom: 181px;
   display: flex;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Interdit le défilement horizontale */
 }
 
 .photo-adam {
   position: absolute;
   top: 0;
   right: 0;
-  margin-top: 10px;
+  margin-top: 50px;
+  margin-right: 90px;
   border-radius: 20px;
 }
 
-@media (max-width: 767px) {
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100px;
+  padding: 10px 100px;
+  box-sizing: border-box;
+  transition: 1s;
+  z-index: 1000;
+}
+
+nav.color {
+  background: rgb(13, 5, 31);
+  height: 80px;
+  padding: 10px 50px;
+}
+
+nav .logo {
+  float: left;
+}
+
+nav .logo img {
+  height: 80px;
+  transition: 0.5s;
+}
+
+nav.color .logo img {
+  height: 60px;
+}
+
+nav > ul {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  float: right;
+}
+
+nav > ul > li {
+  list-style: none;
+  display: inline-block;
+}
+
+nav > ul > li > a:hover {
+  background: #f00;
+  color: #fff;
+}
+
+nav > ul > li > a {
+  color: #262626;
+  text-decoration: none;
+  text-transform: uppercase; /*for capitalisation of letters */
+  line-height: 80px;
+  padding: 5px 20px;
+  transition: 0.5s;
+}
+
+nav.color > ul > li > a {
+  color: #fff;
+  line-height: 60px;
+}
+
+section.content {
+  margin: 0;
+  padding: 0;
+  font-size: 1.1em;
+}
+
+section.sec1,
+section.sec2 {
+  min-height: 100vh;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .intro-wrap {
+    margin-top: 30px;
+  }
+  .responsive-bar {
+    display: block;
+    height: 60px;
+    background: #262626;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+  .responsive-bar .logo img {
+    height: 50px;
+  }
+  .nav {
+    display: none;
+    padding: 0;
+  }
+  .button-cv,
+  .btn-azmog {
+    display: none;
+  }
+  .active {
+    display: block;
+  }
+  .box-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .button-cv,
+  .box-text {
+    margin-right: 0;
+    margin-top: 10px;
+  }
+  .titre-adam-h1 {
+    font-size: 50px;
+    line-height: 50px;
+  }
   .photo-adam {
     position: static;
-    margin-top: 20px; /* Ajustez la marge selon vos besoins pour la version mobile */
+    margin-top: 20px;
+    margin-right: 0px;
+    border-radius: 20px;
+    width: 50%; /* Ajoutez cette ligne pour ajuster la largeur de l'image */
+    padding-bottom: 50px;
   }
+  .text-anim {
+    text-align: center;
+    font-size: 25px;
+  }
+  nav.color {
+    display: none;
+  }
+  .image-presentation {
+    margin-top: px;
+  }
+  .macbook {
+    width: 150%;
+  }
+}
+.image-presentation {
+  opacity: 1;
+  border-radius: 20px;
+  width: 100%; /* Ajustez la largeur selon vos besoins */
+  max-width: 1000px; /* Ajustez la largeur maximale selon vos besoins */
+  margin-top: 20px; /* Ajustez la marge selon vos besoins pour la version mobile */
+}
+
+.experience-div {
+  margin-top: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */

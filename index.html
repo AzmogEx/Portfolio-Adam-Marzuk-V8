@@ -10,8 +10,8 @@
 	</head>
 	<body>
 		<!-- NAVBAR-->
-		<header class="p-3 text-bg-dark">
-			<div class="container">
+		<header>
+			<nav>
 				<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 					<a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
 						<svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap" /></svg>
@@ -24,6 +24,7 @@
 						<li><a href="#" class="nav-link px-2 text-white">FAQ</a></li>
 						<li><a href="#" class="nav-link px-2 text-white">About</a></li>
 					</ul>
+
 					<div class="text-end">
 						<button type="button" class="btn btn-azmog rounded-5 mx-1">Mes experiences</button>
 						<button type="button" class="btn btn-azmog rounded-5 mx-1">Projets</button>
@@ -31,42 +32,86 @@
 						<button type="button" class="btn btn-azmog rounded-5 mx-1">Veille technologique</button>
 					</div>
 				</div>
-			</div>
+			</nav>
 		</header>
+
 		<!--FIN DE NAVBAR-->
 		<div class="section text-light">
 			<div class="text-center">
 				<div class="intro-wrap">
+					<!--TITRE-->
 					<h1 class="titre-adam-h1 text-center text-white">Adam Marzuk</h1>
-					<div class="text-light" style="font-size: 30px"><p id="typingtext"></p></div>
+					<img src="img/azmog.png" loading="lazy" width="303" sizes="(max-width: 479px) 88vw, 303px" alt="" srcset="img/azmog-p-500.png 500w, img/azmog.png 612w" class="photo-adam" />
 
-					<div class="box-container">
-						<!-- <div class="box-text center-text">  &lt;/&gt; Développeur:  </div>
-						<div class="box-text"><img src="img/csharp.svg" alt="c#-logo" width="30" height="30" /></div>
-						<div class="box-text"><img src="img/html.svg" alt="html-logo" width="30" height="30" /></div>
-						<div class="box-text"><img src="img/php.svg" alt="php-logo" width="30" height="30" /></div> -->
-					</div>
+					<!--TXT ANIME-->
+					<div class="text-anim text-light"><p id="typingtext"></p></div>
+
+					<!--CV-->
 					<div class="box-container">
 						<a href="documents/Portfolio-Adam-Marzuk.pdf" target="_blank" class="button-cv">CV FR</a>
 						<a href="documents/Portfolio-Adam-Marzuk-en.pdf" target="_blank" class="button-cv">CV EN</a>
 					</div>
-					<img src="img/azmog.png" loading="lazy" width="303" sizes="(max-width: 479px) 88vw, 303px" alt="" srcset="img/azmog-p-500.png 500w, img/azmog.png 612w" class="photo-adam" />
 
-					<img src="img/Macbook-Pro---Copy1-1920x1080.png" loading="lazy" width="100%" sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1919px) 94vw, 1140px" alt="Moi" srcset="img/Macbook-Pro---Copy1-1920x1080-p-500.png 500w, img/Macbook-Pro---Copy1-1920x1080-p-800.png 800w, img/Macbook-Pro---Copy1-1920x1080-p-1080.png 1080w, img/Macbook-Pro---Copy1-1920x1080-p-1600.png 1600w, img/Macbook-Pro---Copy1-1920x1080.png 1920w" class="image-8" />
-					<div class="text-block-4"></div>
+					<!--MACBOOK-->
+					<img src="img/Macbook-Pro---Copy1-1920x1080.png" loading="lazy" width="50%" sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1919px) 94vw, 1140px" alt="img-Macbook" srcset="img/Macbook-Pro---Copy1-1920x1080-p-500.png 500w, img/Macbook-Pro---Copy1-1920x1080-p-800.png 800w, img/Macbook-Pro---Copy1-1920x1080-p-1080.png 1080w, img/Macbook-Pro---Copy1-1920x1080-p-1600.png 1600w, img/Macbook-Pro---Copy1-1920x1080.png 1920w" class="macbook pt-5" />
+				</div>
+
+				<!--MES EXPERIENCES-->
+				<div class="experience-div">
+					<h2 class="text-center">Mes expériences</h2>
+					<img src="img/presentation.png" loading="lazy" sizes="(max-width: 1919px) 100vw, 1140px" srcset="img/presentation-500.png 500w, img/presentation-800.png 800w, img/presentation-1080.png 1080w" alt="image presentation" class="image-presentation" />
 				</div>
 			</div>
+			<!--============================================================SECTION PROJET / STAGES============================================================================================================-->
+			<!-- <div class="section">
+				<h1 id="projets" class="heading-4 w-node-_9994ad4c-6c39-74aa-a9fd-1c3458815cd9-58815cd8">Mes projets | Stages</h1>
+				<div id="works-grid" class="w-layout-grid works-grid">
+					<div id="w-node-_9994ad4c-6c39-74aa-a9fd-1c3458815cdc-58815cd8">
+						<img src="images/pc1.jpg" loading="lazy" width="100" height="100" alt="" srcset="images/pc1-p-500.jpg 500w, images/pc1-p-800.jpg 800w, images/pc1-p-1080.jpg 1080w, images/pc1-p-1600.jpg 1600w, images/pc1-p-2000.jpg 2000w, images/pc1-p-2600.jpg 2600w, images/pc1-p-3200.jpg 3200w, images/pc1.jpg 4000w" sizes="(max-width: 479px) 100vw, 650px" class="image-4" />
+						<div class="work-description">
+							<a class="project-name-link">Pao / Graphismes / Maquettes 3D<br /></a>
+							<div class="paragraph-light">J&#x27;ai conçu une maquette 3D pour une entreprise <br />et j&#x27;ai appris la pao sur Correl Draw,</div>
+						</div>
+					</div>
+					<div id="w-node-_9994ad4c-6c39-74aa-a9fd-1c3458815ce6-58815cd8">
+						<img src="images/montage.jpg" loading="lazy" sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 991px) 94vw, (max-width: 1919px) 97vw, (max-width: 3061px) 98vw, 3000px" srcset="images/montage-p-500.jpg 500w, images/montage-p-800.jpg 800w, images/montage-p-1080.jpg 1080w, images/montage-p-1600.jpg 1600w, images/montage-p-2000.jpg 2000w, images/montage-p-2600.jpg 2600w, images/montage.jpg 3000w" alt="" class="image-7" />
+						<div class="work-description">
+							<a class="project-name-link">Cablages</a>
+							<div class="paragraph-light">J&#x27;ai appris les différentes normes électriques ainsi que le câblage<br />d&#x27;enseignes a led / néon avec les différentes techniques,<br />lettres boitiers, caissons lumineux etc...</div>
+						</div>
+					</div>
+					<div id="w-node-_9994ad4c-6c39-74aa-a9fd-1c3458815cf1-58815cd8">
+						<div class="work-description">
+							<img src="images/adhesif.jpg" loading="lazy" sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 991px) 94vw, (max-width: 1919px) 97vw, (max-width: 4040px) 99vw, 4000px" srcset="images/adhesif-p-500.jpg 500w, images/adhesif-p-800.jpg 800w, images/adhesif-p-1080.jpg 1080w, images/adhesif-p-1600.jpg 1600w, images/adhesif-p-2000.jpg 2000w, images/adhesif-p-2600.jpg 2600w, images/adhesif-p-3200.jpg 3200w, images/adhesif.jpg 4000w" alt="" class="image-6" />
+							<a class="project-name-link">Adhésif / Impression</a>
+							<div class="paragraph-light">J&#x27;ai appris la pose d&#x27;adhésifs sur des lettres, le lancement d&#x27;impressions sur les différentes machines, les découpes etc...</div>
+						</div>
+					</div>
+					<div id="w-node-_9994ad4c-6c39-74aa-a9fd-1c3458815cf8-58815cd8">
+						<div class="work-description">
+							<img src="images/flowtech.png" loading="lazy" sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 991px) 94vw, (max-width: 1919px) 97vw, (max-width: 4040px) 99vw, 4000px" srcset="images/flowtech.png 500w, images/flowtech.png 800w, images/flowtech.png 1080w, images/flowtech.png 1600w, images/flowtech.png 2000w, images/flowtech.png 2600w, images/flowtech.png 3200w, images/flowtech.png 4000w" alt="" class="image-4" />
+							<a class="project-name-link">FlowTech</a>
+							<div class="paragraph-light">Projet de création d'une entreprise fictive FlowTech de montage de pc fait en js, html, css</div>
+							<a href="https://flowtech-sio.fr" target="_blank" class="button-flow w-button">Accéder au projet</a>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<!--============================================================FIN SECTION PROJET / STAGES============================================================================================================-->
 		</div>
 		<!--ANIM TEXTE-->
 		<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-		<script src="/js/texte-anim.js"></script>
+		<script src="js/texte-anim.js"></script>
 
 		<!--ANIM BUTTON-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
-
 		<script>
 			$(".button-cv").tilt({ scale: 1.1, speed: 1000 });
 		</script>
+
+		<!--NAVBAR-->
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script src="js/nav.js"></script>
 	</body>
 </html>
