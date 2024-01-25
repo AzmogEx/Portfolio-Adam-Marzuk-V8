@@ -38,12 +38,13 @@
 			<div class="text-center">
 				<div class="intro-wrap">
 					<h1 class="titre-adam-h1 text-center text-white">Adam Marzuk</h1>
-					<div class="text-light" style="font-size: 30px">Developpeur back end.</div>
+					<div class="text-light" style="font-size: 30px"><p id="typingtext"></p></div>
+
 					<div class="box-container">
-						<div class="box-text center-text">  &lt;/&gt; Développeur:  </div>
+						<!-- <div class="box-text center-text">  &lt;/&gt; Développeur:  </div>
 						<div class="box-text"><img src="img/csharp.svg" alt="c#-logo" width="30" height="30" /></div>
 						<div class="box-text"><img src="img/html.svg" alt="html-logo" width="30" height="30" /></div>
-						<div class="box-text"><img src="img/php.svg" alt="php-logo" width="30" height="30" /></div>
+						<div class="box-text"><img src="img/php.svg" alt="php-logo" width="30" height="30" /></div> -->
 					</div>
 					<div class="box-container">
 						<a href="documents/Portfolio-Adam-Marzuk.pdf" target="_blank" class="button-cv">CV FR</a>
@@ -56,5 +57,16 @@
 				</div>
 			</div>
 		</div>
+		<!--ANIM TEXTE-->
+		<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+		<script src="/js/texte-anim.js"></script>
+
+		<!--ANIM BUTTON-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+
+		<script>
+			$(".button-cv").tilt({ scale: 1.1, speed: 1000 });
+		</script>
 	</body>
 </html>

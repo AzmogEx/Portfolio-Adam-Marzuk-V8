@@ -12023,7 +12023,15 @@ textarea.form-control-lg {
   align-items: center;
   font-family: "Varela Round", sans-serif;
   background-color: #3898ec;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  box-shadow: 0 0 60px -10px #cd106e;
+  transition: all 0.3s;
   text-decoration: none;
+}
+
+.button-cv:hover {
+  box-shadow: 0 8px 65px -5px #cd106e;
 }
 
 .intro-wrap {

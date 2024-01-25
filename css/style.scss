@@ -34,10 +34,11 @@ body::-webkit-scrollbar-thumb {
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
 
 @import "../node_modules/bootstrap/scss/bootstrap";
-
+//btn nav
 .btn {
 	border-radius: 1.5em;
 }
+//fin btn nav
 
 .section {
 	margin-left: 30px;
@@ -79,7 +80,7 @@ $theme-colors: map-merge($custom-theme-colors, $theme-colors);
 	align-items: center;
 	font-family: "Varela Round", sans-serif;
 }
-
+//button cv
 .button-cv {
 	margin-top: 5px;
 	border-radius: 20px;
@@ -90,8 +91,17 @@ $theme-colors: map-merge($custom-theme-colors, $theme-colors);
 	align-items: center;
 	font-family: "Varela Round", sans-serif;
 	background-color: #3898ec;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	box-shadow: 0 0 60px -10px #cd106e;
+	transition: all 0.3s;
 	text-decoration: none;
 }
+
+.button-cv:hover {
+	box-shadow: 0 8px 65px -5px #cd106e;
+}
+//fin button cv
 .intro-wrap {
 	position: relative;
 	text-align: left;
