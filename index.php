@@ -42,7 +42,7 @@
 				<div class="intro-wrap">
 					<!--TITRE-->
 					<h1 class="titre-adam-h1 text-center text-white">Adam Marzuk</h1>
-					<!-- <img src="img/azmog.png" loading="lazy" width="303" sizes="(max-width: 479px) 88vw, 303px" alt="" srcset="img/azmog-p-500.png 500w, img/azmog.png 612w" class="photo-adam" /> -->
+					<img src="img/azmog.png" loading="lazy" width="303" sizes="(max-width: 479px) 88vw, 303px" alt="" srcset="img/azmog-p-500.png 500w, img/azmog.png 612w" class="photo-adam" />
 
 					<!--TXT ANIME-->
 					<div class="text-anim text-light"><p id="typingtext"></p></div>
