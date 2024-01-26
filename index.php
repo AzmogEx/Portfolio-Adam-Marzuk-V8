@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="/css/style.css" />
 		<link rel="icon" href="/img/favicon.jpg" type="image/logo-icon" />
 		<link rel="shortcut icon" href="/img/favicon.jpg" type="image/logo-icon" />
+		<script src="https://kit.fontawesome.com/9b187fc558.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<!-- NAVBAR-->
@@ -134,6 +135,7 @@
 			</div>
 		</div>
 
+		<?php include 'components/footer.php'; ?>
 		<!--SCRIPT-->
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<!--ANIM TEXTE-->
