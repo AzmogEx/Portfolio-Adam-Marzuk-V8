@@ -5,8 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Portfolio: Adam Marzuk</title>
 		<link rel="stylesheet" href="/css/style.css" />
-		<link rel="icon" href="/img/favicon.jpg" type="image/logo-icon" />
-		<link rel="shortcut icon" href="/img/favicon.jpg" type="image/logo-icon" />
+		<link rel="icon" href="/img/favicon.jpg" type="image/x-icon" />
 		<script src="https://kit.fontawesome.com/9b187fc558.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
@@ -42,20 +41,38 @@
 				<div class="intro-wrap">
 					<!--TITRE-->
 					<h1 class="titre-adam-h1 text-center text-white">Adam Marzuk</h1>
-					<img src="img/azmog.png" loading="lazy" width="303" sizes="(max-width: 479px) 88vw, 303px" alt="" srcset="img/azmog-p-500.png 500w, img/azmog.png 612w" class="photo-adam" />
 
 					<!--TXT ANIME-->
 					<div class="text-anim text-light"><p id="typingtext"></p></div>
 
-					<!--CV-->
-					<div class="box-container">
-						<a href="documents/Portfolio-Adam-Marzuk.pdf" target="_blank" class="button-cv">CV FR</a>
-						<a href="documents/Portfolio-Adam-Marzuk-en.pdf" target="_blank" class="button-cv">CV EN</a>
-					</div>
+
 
 					<!--MACBOOK-->
 					<img src="img/Macbook-Pro---Copy1-1920x1080.png" loading="lazy" width="50%" sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1919px) 94vw, 1140px" alt="img-Macbook" srcset="img/Macbook-Pro---Copy1-1920x1080-p-500.png 500w, img/Macbook-Pro---Copy1-1920x1080-p-800.png 800w, img/Macbook-Pro---Copy1-1920x1080-p-1080.png 1080w, img/Macbook-Pro---Copy1-1920x1080-p-1600.png 1600w, img/Macbook-Pro---Copy1-1920x1080.png 1920w" class="macbook pt-5" />
 				</div>
+
+	<section>
+		<div class="d-flex justify-content-center align-items-center mx-4" style="height: 100vh">
+			<div class="container col-xxl-8 px-4 py-5">
+				<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+					<div class="col-12 col-lg-6">
+						<img src="img/azmog.png" class="d-block mx-lg-auto img-fluid rounded-circle profil w-100" alt="Photo de profil (ma tête)" loading="lazy" />
+					</div>
+
+					<div class="col-lg-6">
+    					<h1 class="display-5 fw-bold text-white lh-1 mb-3">👤 <span>Adam Marzuk</span></h1>
+    					<p class="lead text-white">Etudiant en <span>BTS SIO</span> et passionné par l'informatique depuis le plus jeune âge, j'ai choisi ce domaine afin de me consacrer au développement web.</p>
+						<div class="cv-buttons-container" style="max-width: 150px;">
+    						<div class="d-flex flex-column align-items-center">
+        						<a href="documents/Portfolio-Adam-Marzuk.pdf" target="_blank" class="button-cv me-0 text-center">CV FR</a>
+        						<a href="documents/Portfolio-Adam-Marzuk-en.pdf" target="_blank" class="button-cv text-center">CV EN</a>
+							</div>
+    					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 				<!--MES EXPERIENCES-->
 				<div class="experience-div" id="experience">

@@ -63,8 +63,6 @@ function submsg() {
   flex-basis: 100%;
 }
 
-
-
 .footer {
   flex-wrap: wrap;
   box-sizing: border-box;

@@ -76,11 +76,16 @@ $theme-colors: map-merge($custom-theme-colors, $theme-colors);
 	font-size: 35px;
 }
 
+.cv-buttons-container {
+	display: flex;
+	align-items: center;
+}
+
 .button-cv {
 	margin-top: 5px;
 	border-radius: 20px;
 	padding: 8px;
-	margin-right: 20px; /* Ajoutez de la marge à droite pour espacer du côté de l'image */
+	margin-right: 20px;
 	color: #fff;
 	display: flex;
 	align-items: center;
@@ -92,6 +97,7 @@ $theme-colors: map-merge($custom-theme-colors, $theme-colors);
 	box-shadow: 0 0 60px -10px #cd106e;
 	transition: all 0.3s;
 	text-decoration: none;
+	max-width: 200px; /* Ajustez la largeur maximale selon vos besoins */
 }
 
 .button-cv:hover {
@@ -110,13 +116,17 @@ $theme-colors: map-merge($custom-theme-colors, $theme-colors);
 	overflow-x: hidden; /* Interdit le défilement horizontale */
 }
 
-.photo-adam {
-	position: absolute;
-	top: 0;
-	right: 0;
-	margin-top: 150px;
-	margin-right: 90px;
+.photo-wrap {
 	border-radius: 20px;
+	position: relative;
+	text-align: left;
+	flex-flow: column;
+	align-content: center;
+	justify-content: flex-start;
+	align-items: center;
+	margin-top: 100px;
+	display: flex;
+	overflow-x: hidden; /* Interdit le défilement horizontale */
 }
 //======================================================================================================
 
@@ -234,14 +244,6 @@ section.sec2 {
 	.titre-adam-h1 {
 		font-size: 50px;
 		line-height: 50px;
-	}
-
-	.photo-adam {
-		position: static;
-		margin-top: 20px;
-		margin-right: 0px;
-		border-radius: 20px;
-		width: 50%; /* Ajoutez cette ligne pour ajuster la largeur de l'image */
 	}
 
 	.text-anim {
