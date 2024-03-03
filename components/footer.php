@@ -1,5 +1,5 @@
 <div class="footer">
-  <span class="header">Me contactez</span>
+  <span class="header" id="contact">Me contactez</span>
   <div class="left">
     <textarea placeholder="Nom / Prénom" class="name"></textarea>
     <textarea placeholder="Email" class="email"></textarea>
