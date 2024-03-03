@@ -1,3 +1,21 @@
+<?php
+session_start(); // Démarrez la session
+
+// Afficher le message de succès s'il existe
+if (isset($_SESSION['success_message'])) {
+	echo '<div class="text-light">' . $_SESSION['success_message'] . '</div>';
+	unset($_SESSION['success_message']); // Supprimer le message de la session pour qu'il n'apparaisse qu'une seule fois
+}
+
+// Afficher le message d'erreur s'il existe
+if (isset($_SESSION['error_message'])) {
+	echo '<div class="text-light">' . $_SESSION['error_message'] . '</div>';
+	unset($_SESSION['error_message']); // Supprimer le message de la session pour qu'il n'apparaisse qu'une seule fois
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
