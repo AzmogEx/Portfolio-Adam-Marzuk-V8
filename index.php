@@ -75,17 +75,17 @@ if (isset($_SESSION['error_message'])) {
 				<img src="img/Macbook-Pro---Copy1-1920x1080.png" loading="lazy" width="50%" sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1919px) 94vw, 1140px" alt="img-Macbook" srcset="img/Macbook-Pro---Copy1-1920x1080-p-500.png 500w, img/Macbook-Pro---Copy1-1920x1080-p-800.png 800w, img/Macbook-Pro---Copy1-1920x1080-p-1080.png 1080w, img/Macbook-Pro---Copy1-1920x1080-p-1600.png 1600w, img/Macbook-Pro---Copy1-1920x1080.png 1920w" class="macbook pt-5" />
 			</div>
 
-			<section>
+			<section class="mt-5">
 				<div class="d-flex justify-content-center align-items-center mx-4" style="height: 100vh">
 					<div class="container col-xxl-8 px-4 py-5">
 						<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
 							<div class="col-12 col-lg-6">
-								<img src="img/azmog.png" class="d-block mx-lg-auto img-fluid rounded-circle profil w-100" alt="Photo de profil (ma tête)" loading="lazy" />
+								<img src="img/moi.jpg" class="d-block mx-lg-auto img-fluid rounded-circle profil w-100" alt="Photo de profil (moi)" loading="lazy" />
 							</div>
 
 							<div class="col-lg-6">
 								<h1 class="display-5 fw-bold text-white lh-1 mb-3">👤 <span>Adam Marzuk</span></h1>
-								<p class="lead text-white">Je suis étudiant en <span>BTS SIO</span> et passionné par l'informatique depuis le plus jeune âge, j'ai choisi ce domaine afin de me consacrer au développement web.</p>
+								<p class="lead text-white">Je suis étudiant en <b><span>BTS SIO (Service informatique aux organisations)</span></b> et passionné par l'informatique depuis le plus jeune âge, j'ai choisi ce domaine afin de me consacrer au développement logiciel.</p>
 								<div class="cv-button-container justify-content-center d-flex flex-row align-items-baseline">
 									<div class="cv-buttons-container" style="max-width: 150px;">
 										<a href="documents/Portfolio-Adam-Marzuk.pdf" target="_blank" class="button-cv text-center">CV FR</a>
@@ -119,22 +119,22 @@ if (isset($_SESSION['error_message'])) {
 					<div class="projet-texte">
 						<img src="img/gare-full.png" loading="lazy" width="50%" height="50%" alt="" class="image-pc" />
 						<a class="projet-titre">Logiciel base de données Gares de France</a>
-						<div class="paragraph-light">J&#x27;ai Conçu un logiciel, qui va lister toutes les gares de France dans les différents département. <br>Avec des informations: est ce que la gare prend elle en charge des passager, du transport fairoviere etc...</div>
+						<div class="paragraph-light">J&#x27;ai conçu un logiciel, qui va lister toutes les gares de France dans les différents départements. <br>Avec plusieurs informations (la gare prend elle en charge des passagers, du transport ferroviaire etc...)</div>
 					</div>
 				</div>
 				<div id="adhesif">
 					<img src="img/region-full.png" loading="lazy" width="100%" height="80%" alt="" class="image-pc" />
 					<div class="projet-texte">
 						<a class="projet-titre">Listage des départements, regions et ville de France</a>
-						<div class="paragraph-light">J&#x27;ai Conçu un logiciel permettant de lister toutes les régions, départements, villes de France avec un affichage via la carte, ainsi que les coordonée</div>
+						<div class="paragraph-light">J&#x27;ai conçu un logiciel permettant de lister toutes les régions, départements, villes de France avec un affichage via la carte, ainsi que les coordonnées</div>
 					</div>
 				</div>
 				<div id="flowtech">
 					<div class="projet-texte">
 						<iframe src="https://flowtech-nomodale.adam-marzuk.fr/" id="frame-flowtech" frameborder="0" width="90%" height="500" class="web-flowtech" style="border-radius: 20px"></iframe>
 						<a class="projet-titre">FlowTech</a>
-						<div class="paragraph-light">Projet de création d'une entreprise fictive FlowTech de montage de pc fait en js, html, css</div>
-						<a href="https://flowtech-sio.fr" target="_blank" class="button-cv bg-flowtech text-center">Accéder au projet !</a>
+						<div class="paragraph-light">Projet de création d'une entreprise fictive FlowTech de montage d'ordinateurs gaming fait en java-script, html, css</div>
+						<a href="https://flowtech-sio.fr" target="_blank" class="button-cv bg-flowtech text-center">Accéder</a>
 					</div>
 				</div>
 			</div>
@@ -180,7 +180,7 @@ if (isset($_SESSION['error_message'])) {
 	<!--============================================================SECTION STAGES============================================================================================================-->
 
 	<div id="stages" class="stages-web section pt-5">
-		<h1 id="stages-id" class="heading-4 stages-class text-light">Mes stages</h1>
+		<h1 id="stages-id" class="heading-4 stages-class text-light">Stages lycée</h1>
 		<div id="stages-grille" class="w-layout-grille stages-grille">
 			<div id="pc">
 				<img src="img/pc1.jpg" loading="lazy" width="100%" height="60%" alt="" class="image-pc" />
@@ -215,7 +215,7 @@ if (isset($_SESSION['error_message'])) {
 	</div>
 	<!--============================================================FIN SECTION STAGES PC============================================================================================================-->
 	<div class="stages-mobile pt-5">
-		<h1 class="heading-4 text-light">Mes Stages</h1>
+		<h1 class="heading-4 text-light">Stages lycée</h1>
 		<div>
 			<div>
 				<img src="img/pc1.jpg" loading="lazy" width="100%" height="100%" alt="" class="image-mobile mt-3" />
@@ -249,6 +249,16 @@ if (isset($_SESSION['error_message'])) {
 			</div> -->
 		</div>
 	</div>
+
+	<div id="stages" class="stages-web section pt-5">
+		<h1 id="stages-id" class="heading-4 stages-class text-light">Stages BTS</h1>
+		<div>
+						<!--ICI RAJOUTER LES PHOTOS ET TEXTES DE MES STAGES BTS-->
+						<div class="stages-texte">
+					<a class="stages-titre">EN COURS</a>
+					<div class="paragraph-light">Je suis acuellement en recherche de stage pour mon BTS SIO</div>
+				</div>
+		</div>
 	</div>
 
 
