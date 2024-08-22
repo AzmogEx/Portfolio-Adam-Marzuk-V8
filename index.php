@@ -85,7 +85,7 @@ if (isset($_SESSION['error_message'])) {
 
 							<div class="col-lg-6">
 								<h1 class="display-5 fw-bold text-white lh-1 mb-3">👤 <span>Adam Marzuk</span></h1>
-								<p class="lead text-white">Je suis étudiant en <b><span>BTS SIO (Service informatique aux organisations)</span></b> et passionné par l'informatique depuis le plus jeune âge, j'ai choisi ce domaine afin de me consacrer au développement logiciel.</p>
+								<p class="lead text-white">Je suis étudiant en <b><span>BTS SIO (Services informatiques aux organisations)</span></b> et passionné par l'informatique depuis le plus jeune âge, j'ai choisi ce domaine afin de me consacrer au développement logiciel.</p>
 								<div class="cv-button-container justify-content-center d-flex flex-row align-items-baseline">
 									<div class="cv-buttons-container" style="max-width: 150px;">
 										<a href="documents/Portfolio-Adam-Marzuk.pdf" target="_blank" class="button-cv text-center">CV FR</a>
@@ -133,28 +133,28 @@ if (isset($_SESSION['error_message'])) {
 		<div id="lycee" class="container-card-projet">
 			<card data-image="img-projet/pc1.jpg">
 				<h1 slot="header">Graphisme</h1>
-				<p slot="content">J&#x27;ai conçu une maquette 3D pour une entreprise <br />J&#x27;ai appris la PAO (programmation assisté par ordinateur) sur Correl Draw,</p>
+				<p slot="content">J'ai conçu une maquette 3D pour une entreprise <br />J'ai appris la PAO (programmation assistée par ordinateur) sur Corel Draw,</p>
 			</card>
 			<card data-image="img-projet/montage.jpg">
 				<h1 slot="header">Cablages</h1>
-				<p slot="content">J&#x27;ai appris les différentes normes électriques ainsi que le câblage dans sa globalité avec les différentes techniques</p>
+				<p slot="content">J'ai appris les différentes normes électriques ainsi que le câblage dans sa globalité avec les différentes techniques.</p>
 			</card>
 			<card data-image="img-projet/adhesif.jpg">
-				<h1 slot="header">Adhésif / Impression</h1>
-				<p slot="content">J&#x27;ai appris la pose d&#x27;adhésifs sur des lettres, le lancement d&#x27;impressions sur les différentes machines, les découpes etc...</p>
+				<h1 slot="header">Adhésif / Impression</h1>
+				<p slot="content">J'ai appris la pose d'adhésifs sur des lettres, le lancement d'impressions sur les différentes machines, les découpes, etc.</p>
 			</card>
 		</div>
 		<!--============== SECTION CARD BTS===========-->
-		<h1 id="stages-id" class="heading-4 stages-class text-light text-center">Stages BTS première année <br> muséeum d'histoire naturel de Nîmes</h1>
+		<h1 id="stages-id" class="heading-4 stages-class text-light text-center">Stages BTS première année <br> muséum d'histoire naturelle de Nîmes</h1>
 
 		<div id="bts" class="container-card-projet">
 			<card data-image="img-projet/Zoovengers.png">
 				<h1 slot="header">Zoovengers</h1>
-				<p slot="content">J&#x27;ai conçu une application mobile pour le muséeum <br />C'est un escape game pour les visiteurs. Elle est développé en dart avec l'aide du framework Flutter</p>
+				<p slot="content">J'ai conçu une application mobile pour le muséum <br />C'est un escape game pour les visiteurs. Elle est développée en Dart avec l'aide du framework Flutter.</p>
 			</card>
 			<card data-image="img-projet/Compteur.png">
 				<h1 slot="header">Compteur</h1>
-				<p slot="content">J&#x27;ai conçu une application pour les tablettes android du musée<br />permettant au gardien des salles du musée de comptabiliser le nombre de visiteur total de la journée et actuel en temps réel</p>
+				<p slot="content">J'ai conçu une application pour les tablettes android du musée<br />permettant au gardien des salles du musée de comptabiliser le nombre de visiteurs total de la journée et actuel en temps réel.</p>
 			</card>
 		</div>
 		<!-- partial -->
