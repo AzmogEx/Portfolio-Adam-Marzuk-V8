@@ -227,9 +227,8 @@ if (isset($_SESSION['error_message'])) {
 
 
 
-		<!--============================================================FIN SECTION STAGES Mobiles============================================================================================================-->
+		<!--============================================================FIN SECTION STAGES============================================================================================================-->
 		<?php include 'components/footer.php'; ?>
-
 
 		<!--SCRIPT-->
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -245,7 +244,6 @@ if (isset($_SESSION['error_message'])) {
 
 		<!--NAVBAR-->
 		<script src="js/nav.js"></script>
-		<script src="js/slide.js"></script>
 		<script src="js/slide.js"></script>
 		<script src="js/flowtech.js"></script>
 </body>
