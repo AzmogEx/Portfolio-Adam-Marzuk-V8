@@ -184,22 +184,24 @@ if (isset($_SESSION['error_message'])) {
 		</div>
 
 		<!--===============SECTION Lycee===========-->
-		<h1 id="stages-id" class="heading-4 stages-class text-light text-left border-bottom border-light border-5 titre-section"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
-			&nbsp;Stages Lycee</h1>
+		<div id="lycee">
+			<h1 id="stages-id" class="heading-4 stages-class text-light text-left border-bottom border-light border-5 titre-section"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+				&nbsp;Stages Lycee</h1>
 
-		<div id="lycee" class="container-card-projet">
-			<card data-image="img-projet/pc1.jpg">
-				<h1 slot="header">Graphisme</h1>
-				<p slot="content">J'ai conçu une maquette 3D pour une entreprise <br />J'ai appris la PAO (programmation assistée par ordinateur) sur Corel Draw,</p>
-			</card>
-			<card data-image="img-projet/montage.jpg">
-				<h1 slot="header">Cablages</h1>
-				<p slot="content">J'ai appris les différentes normes électriques ainsi que le câblage dans sa globalité avec les différentes techniques.</p>
-			</card>
-			<card data-image="img-projet/adhesif.jpg">
-				<h1 slot="header">Adhésif / Impression</h1>
-				<p slot="content">J'ai appris la pose d'adhésifs sur des lettres, le lancement d'impressions sur les différentes machines, les découpes, etc.</p>
-			</card>
+			<div class="container-card-projet">
+				<card data-image="img-projet/pc1.jpg">
+					<h1 slot="header">Graphisme</h1>
+					<p slot="content">J'ai conçu une maquette 3D pour une entreprise <br />J'ai appris la PAO (programmation assistée par ordinateur) sur Corel Draw,</p>
+				</card>
+				<card data-image="img-projet/montage.jpg">
+					<h1 slot="header">Cablages</h1>
+					<p slot="content">J'ai appris les différentes normes électriques ainsi que le câblage dans sa globalité avec les différentes techniques.</p>
+				</card>
+				<card data-image="img-projet/adhesif.jpg">
+					<h1 slot="header">Adhésif / Impression</h1>
+					<p slot="content">J'ai appris la pose d'adhésifs sur des lettres, le lancement d'impressions sur les différentes machines, les découpes, etc.</p>
+				</card>
+			</div>
 		</div>
 		<!--============== SECTION CARD BTS===========-->
 		<h1 id="stages-id" class="heading-4 stages-class text-light text-left border-bottom border-light border-5 titre-section"><i class="fa fa-university" aria-hidden="true"></i>
@@ -243,11 +245,9 @@ if (isset($_SESSION['error_message'])) {
 
 		<!--NAVBAR-->
 		<script src="js/nav.js"></script>
-		<script>
-			document.getElementById('flowtech-card').addEventListener('click', function () {
-				window.open('https://flowtech-sio.fr', '_blank');
-			});
-		</script>
+		<script src="js/slide.js"></script>
+		<script src="js/slide.js"></script>
+		<script src="js/flowtech.js"></script>
 </body>
 
 </html>
