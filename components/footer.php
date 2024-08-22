@@ -22,7 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <form method="post" action="sendmail.php">
   <div class="footer">
-    <span class="header" id="contact">Me contacter</span>
+    <span class="header heading-4 stages-class text-light text-left border-bottom border-light border-5 titre-section" id="contact"><i class="fa fa-envelope" aria-hidden="true"></i>
+      Me contacter</span>
     <div class="left">
       <input type="text" placeholder="Nom / Prénom" id="name" class="name" name="name">
       <input type="text" placeholder="Email" id="email" class="email" name="email">
@@ -254,4 +255,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       border-radius: 10px;
     }
   }
-</style>
+
+  </>

@@ -97,16 +97,72 @@ if (isset($_SESSION['error_message'])) {
 					</div>
 				</div>
 			</section>
-
+			<section id="competences" class="skills competences-section">
+				<h1 id="stages-id" class="heading-4 stages-class text-light border-bottom border-light border-5 text-left titre-section"><i class="fa fa-pie-chart" aria-hidden="true"></i>
+					Mes competences</h1>
+				<div class="card-container-skills">
+					<div class="card-skills">
+						<h3 class="card-title-skills"><i class="fa fa-code" aria-hidden="true"></i>
+							Langages</h3>
+						<ul class="text-dark list">
+							<li>C#</li>
+							<li>Java</li>
+							<li>HTML-5</li>
+							<li>CSS-3</li>
+							<li>JavaScript</li>
+							<li>PHP</li>
+							<li>SQL</li>
+							<li>Python</li>
+						</ul>
+					</div>
+					<div class="card-skills">
+						<h3 class="card-title-skills"><i class="fa fa-cogs" aria-hidden="true"></i>
+							Outils & Framework</h3>
+						<ul class="text-dark list">
+							<li>Visual Studio</li>
+							<li>Flutter</li>
+							<li>Bootstrap</li>
+							<li>Visual Studio Code</li>
+							<li>Git</li>
+							<li>GitHub</li>
+							<li>Devops</li>
+							<li>Php My Admin</li>
+							<li>Android-Studio</li>
+							<li>Xcode</li>
+							<li>Jetbrains</li>
+							<li>Vue-JS</li>
+						</ul>
+					</div>
+					<div class="card-skills">
+						<h3 class="card-title-skills"><i class="fa fa-comments" aria-hidden="true"></i>
+							Savoir Faire</h3>
+						<ul class="text-dark list">
+							<li>Travail en équipe</li>
+							<li>Cohésion de groupe</li>
+							<li>Extravertie</li>
+							<li>Autonome</li>
+							<li>Grande expériences</li>
+							<li>Passionné</li>
+							<li>Organisé</li>
+						</ul>
+					</div>
+				</div>
+			</section>
 			<!--MES EXPERIENCES-->
-			<div class="experience-div" id="experience">
-				<h2 class="text-center">Mes expériences</h2>
+			<div class="experience-image text-center image-experience" id="experience">
+				<h1 id="stages-id" class="heading-4 stages-class text-light border-bottom border-light border-5 titre-section"><i class="fa fa-user-o" aria-hidden="true"></i>
+					Mes experiences
+				</h1>
 				<img src="img/presentation.png" loading="lazy" sizes="(max-width: 1919px) 100vw, 1140px" srcset="img/presentation-500.png 500w, img/presentation-800.png 800w, img/presentation-1080.png 1080w" alt="image presentation" class="image-presentation" />
 			</div>
+
+
+
 		</div>
 		<!--===============SECTION Projets===========-->
 		<div id="projet-nav"></div>
-		<h1 id="stages-id" class="heading-4 stages-class text-light text-center">Mes projets</h1>
+		<h1 id="stages-id" class="heading-4 stages-class text-light border-bottom border-light border-5 text-left titre-section"><i class="fa fa-folder-open" aria-hidden="true"></i>
+			Mes projets</h1>
 
 		<div id="projet" class="container-card-projet">
 			<card data-image="img-projet/gare.png">
@@ -128,7 +184,8 @@ if (isset($_SESSION['error_message'])) {
 		</div>
 
 		<!--===============SECTION Lycee===========-->
-		<h1 id="stages-id" class="heading-4 stages-class text-light text-center">Stages Lycée</h1>
+		<h1 id="stages-id" class="heading-4 stages-class text-light text-left border-bottom border-light border-5 titre-section"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+			&nbsp;Stages Lycee</h1>
 
 		<div id="lycee" class="container-card-projet">
 			<card data-image="img-projet/pc1.jpg">
@@ -145,7 +202,8 @@ if (isset($_SESSION['error_message'])) {
 			</card>
 		</div>
 		<!--============== SECTION CARD BTS===========-->
-		<h1 id="stages-id" class="heading-4 stages-class text-light text-center">Stages BTS première année <br> muséum d'histoire naturelle de Nîmes</h1>
+		<h1 id="stages-id" class="heading-4 stages-class text-light text-left border-bottom border-light border-5 titre-section"><i class="fa fa-university" aria-hidden="true"></i>
+			&nbsp;Stages BT S</h1>
 
 		<div id="bts" class="container-card-projet">
 			<card data-image="img-projet/Zoovengers.png">
