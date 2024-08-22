@@ -226,8 +226,8 @@ if (isset($_SESSION['error_message'])) {
 
 
 		<!--============================================================FIN SECTION STAGES Mobiles============================================================================================================-->
-
 		<?php include 'components/footer.php'; ?>
+
 
 		<!--SCRIPT-->
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
