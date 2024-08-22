@@ -1,20 +1,23 @@
 <?php
-session_start(); // Démarrez la session
+session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Vérifier si les clés existent dans $_POST
-    if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Vérifier si les clés nécessaires existent dans $_POST
+    if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
         $name = $_POST['name'];
         $email = $_POST['email'];
         $message = $_POST['message'];
+        $to = 'recipient@example.com'; // Remplacez par l'adresse e-mail du destinataire
+        $subject = 'Nouveau message de contact';
 
-        // Adresse e-mail à laquelle vous souhaitez envoyer le message
-        $to = 'contact@adam-marzuk.fr';
+        // Valider l'adresse e-mail
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $_SESSION['error_message'] = 'Adresse e-mail invalide.';
+            header('Location: index.php');
+            exit();
+        }
 
-        // Sujet du message
-        $subject = 'Nouveau message depuis le formulaire de contact';
-
-        // En-têtes du message
+        // En-têtes de l'e-mail
         $headers = "From: $email\r\n";
         $headers .= "Reply-To: $email\r\n";
         $headers .= "Content-type: text/html\r\n";
@@ -39,4 +42,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Rediriger vers la page index.php
 header('Location: index.php');
 exit();
-?>
