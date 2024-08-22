@@ -41,7 +41,7 @@ if (isset($_SESSION['error_message'])) {
 
 				<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 pt-3" style="font-size: 18px">
 					<li><a href="index.php" class="nav-link px-2 text-secondary">Accueil</a></li>
-					<li><a href="#stages" class="nav-link px-2 text-white">Stages</a></li>
+					<li><a href="#lycee" class="nav-link px-2 text-white">Stages</a></li>
 					<li><a href="#projet-nav" class="nav-link px-2 text-white">Projets</a></li>
 					<!-- <li><a href="#" class="nav-link px-2 text-white">FAQ</a></li> -->
 					<!-- <li><a href="#" class="nav-link px-2 text-white">About</a></li> -->
@@ -50,7 +50,7 @@ if (isset($_SESSION['error_message'])) {
 				<div class="text-end pt-3">
 					<a href="#experience" class="btn btn-azmog rounded-5 mx-1">Mes experiences</a>
 					<a href="#projet" class="btn btn-azmog rounded-5 mx-1">Projets</a>
-					<a href="#veille" class="btn btn-azmog rounded-5 mx-1">Veille technologique</a>
+					<a href="pages/construction/construction.html" class="btn btn-azmog rounded-5 mx-1">Veille technologique</a>
 					<a href="#contact" class="btn btn-azmog rounded-5 mx-1">Contact</a>
 				</div>
 			</div>
@@ -111,19 +111,19 @@ if (isset($_SESSION['error_message'])) {
 		<div id="projet" class="container-card-projet">
 			<card data-image="img-projet/gare.png">
 				<h1 slot="header">Gare de France</h1>
-				<p slot="content">J&#x27;ai Conçu un logiciel, qui va lister toutes les gares de France dans les différents département. <br>Avec des informations: est ce que la gare prend elle en charge des passager, du transport fairoviere etc...</p>
+				<p slot="content">J'ai conçu un logiciel listant toutes les gares de France par département, incluant des informations sur la prise en charge des passagers et le transport ferroviaire.</p>
 			</card>
 			<card data-image="img-projet/fromage.png">
 				<h1 slot="header">Fromage de France</h1>
-				<p slot="content">J&#x27;ai conçu un logiciel, listant grâce à une base de données, tout les différents fromages des régions, permettant par la suite d'afficher la page wikipedia du fromage, ainsi que la localisation du département, et permettre l'achat du fromage</p>
+				<p slot="content">J'ai développé un logiciel répertoriant les différents fromages des régions françaises, avec des liens vers les pages Wikipédia et des options d'achat.</p>
 			</card>
 			<card data-image="img-projet/region.png">
 				<h1 slot="header">Région de France</h1>
-				<p slot="content">J&#x27;ai Conçu un logiciel permettant de lister toutes les régions, départements, villes de France avec un affichage via la carte, ainsi que les coordonée</p>
+				<p slot="content">J'ai créé un logiciel permettant de lister toutes les régions, départements et villes de France avec un affichage cartographique et des coordonnées.</p>
 			</card>
 			<card id="flowtech-card" data-image="img-projet/flowtech.png">
 				<h1 slot="header">Flowtech</h1>
-				<p slot="content">Projet de création d'une entreprise fictive FlowTech de montage de pc fait en js, html, css</p>
+				<p slot="content">Projet de création d'une entreprise fictive FlowTech spécialisée dans le montage de PC, réalisé en JavaScript, PHP, HTML et CSS.</p>
 			</card>
 		</div>
 
@@ -170,6 +170,7 @@ if (isset($_SESSION['error_message'])) {
 		<!--============================================================FIN SECTION STAGES Mobiles============================================================================================================-->
 
 		<?php include 'components/footer.php'; ?>
+
 		<!--SCRIPT-->
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<!--ANIM TEXTE-->
