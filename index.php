@@ -42,14 +42,14 @@ if (isset($_SESSION['error_message'])) {
 				<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 pt-3" style="font-size: 18px">
 					<li><a href="index.php" class="nav-link px-2 text-secondary">Accueil</a></li>
 					<li><a href="#stages" class="nav-link px-2 text-white">Stages</a></li>
-					<li><a href="#projets" class="nav-link px-2 text-white">Projets</a></li>
+					<li><a href="#projet-nav" class="nav-link px-2 text-white">Projets</a></li>
 					<!-- <li><a href="#" class="nav-link px-2 text-white">FAQ</a></li> -->
 					<!-- <li><a href="#" class="nav-link px-2 text-white">About</a></li> -->
 				</ul>
 
 				<div class="text-end pt-3">
 					<a href="#experience" class="btn btn-azmog rounded-5 mx-1">Mes experiences</a>
-					<a href="#projets" class="btn btn-azmog rounded-5 mx-1">Projets</a>
+					<a href="#projet" class="btn btn-azmog rounded-5 mx-1">Projets</a>
 					<a href="#veille" class="btn btn-azmog rounded-5 mx-1">Veille technologique</a>
 					<a href="#contact" class="btn btn-azmog rounded-5 mx-1">Contact</a>
 				</div>
@@ -76,7 +76,7 @@ if (isset($_SESSION['error_message'])) {
 			</div>
 
 			<section class="mt-5">
-				<div class="d-flex justify-content-center align-items-center mx-4" style="height: 100vh">
+				<div class="d-flex justify-content-center align-items-center mx-4" style="height: 150vh">
 					<div class="container col-xxl-8 px-4 py-5">
 						<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
 							<div class="col-12 col-lg-6">
@@ -104,227 +104,91 @@ if (isset($_SESSION['error_message'])) {
 				<img src="img/presentation.png" loading="lazy" sizes="(max-width: 1919px) 100vw, 1140px" srcset="img/presentation-500.png 500w, img/presentation-800.png 800w, img/presentation-1080.png 1080w" alt="image presentation" class="image-presentation" />
 			</div>
 		</div>
-		<!--============================================================SECTION PROJETS============================================================================================================-->
-		<div id="projets" class="projet-web section pt-5">
-			<h1 id="projet-id" class="heading-4 projet-class">Mes Projets</h1>
-			<div id="projet-grille" class="w-layout-grille projet-grille">
-				<div id="pc">
-					<img src="img/fromage-full.png" loading="lazy" width="100%" height="60%" alt="" class="image-pc" />
-					<div class="projet-texte">
-						<a class="projet-titre">Logiciel base de données Fromages de France<br /></a>
-						<div class="paragraph-light">J&#x27;ai conçu un logiciel, listant grâce à une base de données, tout les différents fromages des régions, permettant par la suite d'afficher la page wikipedia du fromage, ainsi que la localisation du département, et permettre l'achat du fromage</div>
-					</div>
-				</div>
-				<div id="cablage">
-					<div class="projet-texte">
-						<img src="img/gare-full.png" loading="lazy" width="50%" height="50%" alt="" class="image-pc" />
-						<a class="projet-titre">Logiciel base de données Gares de France</a>
-						<div class="paragraph-light">J&#x27;ai conçu un logiciel, qui va lister toutes les gares de France dans les différents départements. <br>Avec plusieurs informations (la gare prend elle en charge des passagers, du transport ferroviaire etc...)</div>
-					</div>
-				</div>
-				<div id="adhesif">
-					<img src="img/region-full.png" loading="lazy" width="100%" height="80%" alt="" class="image-pc" />
-					<div class="projet-texte">
-						<a class="projet-titre">Listage des départements, regions et ville de France</a>
-						<div class="paragraph-light">J&#x27;ai conçu un logiciel permettant de lister toutes les régions, départements, villes de France avec un affichage via la carte, ainsi que les coordonnées</div>
-					</div>
-				</div>
-				<div id="flowtech">
-					<div class="projet-texte">
-						<iframe src="https://flowtech-nomodale.adam-marzuk.fr/" id="frame-flowtech" frameborder="0" width="90%" height="500" class="web-flowtech" style="border-radius: 20px"></iframe>
-						<a class="projet-titre">FlowTech</a>
-						<div class="paragraph-light">Projet de création d'une entreprise fictive FlowTech de montage d'ordinateurs gaming fait en java-script, html, css</div>
-						<a href="https://flowtech-sio.fr" target="_blank" class="button-cv bg-flowtech text-center">Accéder</a>
-					</div>
-				</div>
-			</div>
+		<!--===============SECTION Projets===========-->
+		<div id="projet-nav"></div>
+		<h1 id="stages-id" class="heading-4 stages-class text-light text-center">Mes projets</h1>
+
+		<div id="projet" class="container-card-projet">
+			<card data-image="img-projet/gare.png">
+				<h1 slot="header">Gare de France</h1>
+				<p slot="content">J&#x27;ai Conçu un logiciel, qui va lister toutes les gares de France dans les différents département. <br>Avec des informations: est ce que la gare prend elle en charge des passager, du transport fairoviere etc...</p>
+			</card>
+			<card data-image="img-projet/fromage.png">
+				<h1 slot="header">Fromage de France</h1>
+				<p slot="content">J&#x27;ai conçu un logiciel, listant grâce à une base de données, tout les différents fromages des régions, permettant par la suite d'afficher la page wikipedia du fromage, ainsi que la localisation du département, et permettre l'achat du fromage</p>
+			</card>
+			<card data-image="img-projet/region.png">
+				<h1 slot="header">Région de France</h1>
+				<p slot="content">J&#x27;ai Conçu un logiciel permettant de lister toutes les régions, départements, villes de France avec un affichage via la carte, ainsi que les coordonée</p>
+			</card>
+			<card id="flowtech-card" data-image="img-projet/flowtech.png">
+				<h1 slot="header">Flowtech</h1>
+				<p slot="content">Projet de création d'une entreprise fictive FlowTech de montage de pc fait en js, html, css</p>
+			</card>
 		</div>
-		<!--============================================================FIN SECTION PROJET / STAGES============================================================================================================-->
-		<div class="projet-mobile pt-5">
-			<h1 class="heading-4">Mes projets</h1>
-			<div>
-				<div>
-					<img src="img/fromage-full.png" loading="lazy" width="100%" height="100%" alt="" class="image-mobile mt-3" />
-					<div class="projet-texte-mobile">
-						<a class="projet-titre-mobile">Logiciel base de données Gares de France<br /></a>
-						<div class="paragraph-light">J&#x27;ai conçu un logiciel, listant grâce à une base de données, tout les différents fromages des régions, permettant par la suite d'afficher la page wikipedia du fromage, ainsi que la localisation du département, et permettre l'achat du fromage</div>
-					</div>
-				</div>
-				<div>
-					<div class="projet-texte">
-						<img src="img/gare-full.png" loading="lazy" width="100%" height="100%" alt="" class="image-mobile" />
-						<a class="projet-titre-mobile">Logiciel base de données Gares de France</a>
-						<div class="paragraph-light">J&#x27;ai Conçu un logiciel, qui va lister toutes les gares de France dans les différents département. <br>Avec des informations: est ce que la gare prend elle en charge des passager, du transport fairoviere etc...</div>
-					</div>
-				</div>
-				<div>
-					<img src="img/region-full.png" loading="lazy" width="100%" height="100%" alt="" class="image-mobile" />
-					<div class="projet-texte-mobile">
-						<a class="projet-titre-mobile">Listage des départements, regions et ville de France</a>
-						<div class="paragraph-light">J&#x27;ai Conçu un logiciel permettant de lister toutes les régions, départements, villes de France avec un affichage via la carte, ainsi que les coordonée</div>
-					</div>
-				</div>
-				<div>
-					<img src="img/flowtech.png" loading="lazy" width="100%" height="100%" alt="" class="image-mobile" />
-					<div class="projet-texte-mobile">
-						<a class="projet-titre-mobile">FlowTech</a>
-						<div class="paragraph-light">Projet de création d'une entreprise fictive FlowTech de montage de pc fait en js, html, css</div>
-						<a href="https://flowtech-sio.fr" target="_blank" class="button-cv bg-flowtech">Découvrir</a>
-					</div>
-				</div>
-			</div>
+
+		<!--===============SECTION Lycee===========-->
+		<h1 id="stages-id" class="heading-4 stages-class text-light text-center">Stages Lycée</h1>
+
+		<div id="lycee" class="container-card-projet">
+			<card data-image="img-projet/pc1.jpg">
+				<h1 slot="header">Pao / Graphismes / Maquettes 3D</h1>
+				<p slot="content">J&#x27;ai conçu une maquette 3D pour une entreprise <br />J&#x27;ai appris la pao sur Correl Draw,</p>
+			</card>
+			<card data-image="img-projet/montage.jpg">
+				<h1 slot="header">Cablages</h1>
+				<p slot="content">J&#x27;ai appris les différentes normes électriques ainsi que le câblage<br />d&#x27;enseignes a led / néon avec les différentes techniques,<br />lettres boitiers, caissons lumineux etc...</p>
+			</card>
+			<card data-image="img-projet/adhesif.jpg">
+				<h1 slot="header">Adhésif / Impression</h1>
+				<p slot="content">J&#x27;ai appris la pose d&#x27;adhésifs sur des lettres, le lancement d&#x27;impressions sur les différentes machines, les découpes etc...</p>
+			</card>
 		</div>
-	</div>
+		<!--============== SECTION CARD BTS===========-->
+		<h1 id="stages-id" class="heading-4 stages-class text-light text-center">Stages BTS première année <br> muséeum d'histoire naturel de Nîmes</h1>
 
-
-	<!--============================================================SECTION STAGES============================================================================================================-->
-
-	<div id="stages" class="stages-web section pt-5">
-		<h1 id="stages-id" class="heading-4 stages-class text-light">Stages lycée</h1>
-		<div id="stages-grille" class="w-layout-grille stages-grille">
-			<div id="pc">
-				<img src="img/pc1.jpg" loading="lazy" width="100%" height="60%" alt="" class="image-pc" />
-				<div class="stages-texte">
-					<a class="stages-titre">Pao / Graphismes / Maquettes 3D<br /></a>
-					<div class="paragraph-light">J&#x27;ai conçu une maquette 3D pour une entreprise <br />J&#x27;ai appris la pao sur Correl Draw,</div>
-				</div>
-			</div>
-			<div id="cablage">
-				<div class="stages-texte">
-					<img src="img/montage.jpg" loading="lazy" width="50%" height="50%" alt="" class="image-pc" />
-					<a class="stages-titre">Cablages</a>
-					<div class="paragraph-light">J&#x27;ai appris les différentes normes électriques ainsi que le câblage<br />d&#x27;enseignes a led / néon avec les différentes techniques,<br />lettres boitiers, caissons lumineux etc...</div>
-				</div>
-			</div>
-			<div id="adhesif">
-				<img src="img/adhesif.jpg" loading="lazy" width="100%" height="80%" alt="" class="image-pc" />
-				<div class="stages-texte">
-					<a class="stages-titre">Adhésif / Impression</a>
-					<div class="paragraph-light">J&#x27;ai appris la pose d&#x27;adhésifs sur des lettres, le lancement d&#x27;impressions sur les différentes machines, les découpes etc...</div>
-				</div>
-			</div>
-			<!-- <div id="flowtech">
-				<div class="stages-texte">
-					<iframe src="https://flowtech-nomodale.adam-marzuk.fr/" id="frame-flowtech" frameborder="0" width="90%" height="500" class="web-flowtech" style="border-radius: 20px"></iframe>
-					<a class="stages-titre">FlowTech</a>
-					<div class="paragraph-light">Projet de création d'une entreprise fictive FlowTech de montage de pc fait en js, html, css</div>
-					<a href="https://flowtech-sio.fr" target="_blank" class="button-cv bg-flowtech text-center">Accéder au projet !</a>
-				</div>
-			</div> -->
+		<div id="bts" class="container-card-projet">
+			<card data-image="img-projet/Zoovengers.png">
+				<h1 slot="header">Zoovengers</h1>
+				<p slot="content">J&#x27;ai conçu une application mobile pour le muséeum <br />C'est un escape game pour les visiteurs. Elle est développé en dart avec l'aide du framework Flutter</p>
+			</card>
+			<card data-image="img-projet/Compteur.png">
+				<h1 slot="header">Compteur</h1>
+				<p slot="content">J&#x27;ai conçu une application pour les tablettes android du musée<br />permettant au gardien des salles du musée de comptabiliser le nombre de visiteur total de la journée et actuel en temps réel</p>
+			</card>
 		</div>
-	</div>
-	<!--============================================================FIN SECTION STAGES PC============================================================================================================-->
-	<div class="stages-mobile pt-5">
-		<h1 class="heading-4 text-light">Stages lycée</h1>
-		<div>
-			<div>
-				<img src="img/pc1.jpg" loading="lazy" width="100%" height="100%" alt="" class="image-mobile mt-3" />
-				<div class="stages-texte-mobile">
-					<a class="stages-titre-mobile">Pao / Graphismes / Maquettes 3D<br /></a>
-					<div class="paragraph-light">J&#x27;ai conçu une maquette 3D pour une entreprise <br />J&#x27;ai appris la pao sur Correl Draw,</div>
-				</div>
-			</div>
-			<div>
-				<div class="stages-texte">
-					<img src="img/montage.jpg" loading="lazy" width="100%" height="100%" alt="" class="image-mobile" />
-					<a class="stages-titre-mobile">Cablages</a>
-					<div class="paragraph-light">J&#x27;ai appris les différentes normes électriques ainsi que le câblage<br />d&#x27;enseignes a led / néon avec les différentes techniques,<br />lettres boitiers, caissons lumineux etc...</div>
-				</div>
-			</div>
-			<div>
-				<img src="img/adhesif.jpg" loading="lazy" width="100%" height="100%" alt="" class="image-mobile" />
-				<div class="stages-texte-mobile">
-					<a class="stages-titre-mobile">Adhésif / Impression</a>
-					<div class="paragraph-light">J&#x27;ai appris la pose d&#x27;adhésifs sur des lettres, le lancement d&#x27;impressions sur les différentes machines, les découpes etc...</div>
-				</div>
-			</div>
-			<!--4 eme collone à rajouter-->
-			<!-- <div>
-				<img src="img/flowtech.png" loading="lazy" width="100%" height="100%" alt="" class="image-mobile" />
-				<div class="stages-texte-mobile">
-					<a class="stages-titre-mobile">FlowTech</a>
-					<div class="paragraph-light">Projet de création d'une entreprise fictive FlowTech de montage de pc fait en js, html, css</div>
-					<a href="https://flowtech-sio.fr" target="_blank" class="button-cv bg-flowtech">Accéder au projet !</a>
-				</div>
-			</div> -->
-		</div>
-	</div>
-
-	<div id="stages" class="stages-web section pt-5">
-		<h1 id="stages-id" class="heading-4 stages-class text-light">Stages BTS</h1>
-		<div>
-						<!--ICI RAJOUTER LES PHOTOS ET TEXTES DE MES STAGES BTS-->
-						<div class="stages-texte">
-					<a class="stages-titre">EN COURS</a>
-					<div class="paragraph-light">Je suis acuellement en recherche de stage pour mon BTS SIO</div>
-				</div>
-		</div>
-	</div>
+		<!-- partial -->
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js'></script>
+		<script src="script-card/script-card-bts.js"></script>
+		<script src="script-card/script-card-lycee.js"></script>
+		<script src="script-card/script-card-projets.js"></script>
 
 
 
 
-	<!--============================================================FIN SECTION STAGES Mobiles============================================================================================================-->
-	<!-- CARTES BENTO
-	<div class=" pt-5">
-		<section>
 
-			<div class="container">
-				<h1 class="text-light ">Mes stages</h1>
+		<!--============================================================FIN SECTION STAGES Mobiles============================================================================================================-->
 
-				<div class="row">
-					<div class="col-lg-4 col-md-6 col-sm-12 p-3">
-						<div class="card clickable rounded-5 shadow">
-							<a data-bs-toggle="modal" data-bs-target="#decouvrirModal"><img class="card-img rounded-5" src="/img/adhesif.jpg"></a>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-12 p-3">
-						<div class="card clickable rounded-5 shadow">
-							<a data-bs-toggle="modal" data-bs-target="#actualiteModal"><img class="card-img rounded-5" src="/img/fromage-full.png"></a>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-12 p-3">
-						<div class="card clickable rounded-5 shadow">
-							<a href="/assets/Quizz-IA-Table-Rondes-CCI-GARD.pdf" target="_blank"><img class="card-img rounded-5" src="/img/montage.jpg"></a>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-4 col-md-6 col-sm-12 p-3">
-						<div class="card clickable rounded-5 shadow">
-							<a data-bs-toggle="modal" data-bs-target="#listeiaModal"><img class="card-img rounded-5" src="/img/montage.jpg"></a>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-12 p-3">
-						<div class="card clickable rounded-5 shadow">
-							<a data-bs-toggle="modal" data-bs-target="#dangerModal"><img class="card-img rounded-5" src="/img/montage.jpg"></a>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-12 p-3">
-						<div class="card clickable rounded-5 shadow">
-							<a data-bs-toggle="modal" data-bs-target="#stageModal"><img class="card-img rounded-5" src="/img/montage.jpg"></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div> -->
+		<?php include 'components/footer.php'; ?>
+		<!--SCRIPT-->
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<!--ANIM TEXTE-->
+		<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+		<script src="js/texte-anim.js"></script>
 
-	<?php include 'components/footer.php'; ?>
-	<!--SCRIPT-->
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<!--ANIM TEXTE-->
-	<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-	<script src="js/texte-anim.js"></script>
+		<!--ANIM BUTTON-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+		<script>
+			$(".button-cv").tilt({ scale: 1.1, speed: 1000 });
+		</script>
 
-	<!--ANIM BUTTON-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
-	<script>
-		$(".button-cv").tilt({ scale: 1.1, speed: 1000 });
-	</script>
-
-	<!--NAVBAR-->
-	<script src="js/nav.js"></script>
+		<!--NAVBAR-->
+		<script src="js/nav.js"></script>
+		<script>
+			document.getElementById('flowtech-card').addEventListener('click', function () {
+				window.open('https://flowtech-sio.fr', '_blank');
+			});
+		</script>
 </body>
 
 </html>
