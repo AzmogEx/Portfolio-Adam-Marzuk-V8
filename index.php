@@ -88,8 +88,8 @@ if (isset($_SESSION['error_message'])) {
 								<p class="lead text-white">Je suis étudiant en <b><span>BTS SIO (Services informatiques aux organisations)</span></b> et passionné par l'informatique depuis le plus jeune âge, j'ai choisi ce domaine afin de me consacrer au développement logiciel.</p>
 								<div class="cv-button-container justify-content-center d-flex flex-row align-items-baseline">
 									<div class="cv-buttons-container" style="max-width: 150px;">
-										<a href="documents/Portfolio-Adam-Marzuk.pdf" target="_blank" class="button-cv text-center">CV FR</a>
-										<a href="documents/Portfolio-Adam-Marzuk-en.pdf" target="_blank" class="button-cv text-center">CV EN</a>
+										<a href="https://cv.adam-marzuk.fr" target="_blank" class="button-cv text-center">CV FR</a>
+										<a href="https://cv-en.adam-marzuk.fr" target="_blank" class="button-cv text-center">CV EN</a>
 									</div>
 								</div>
 							</div>
