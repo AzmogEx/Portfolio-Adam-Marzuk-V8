@@ -132,12 +132,12 @@ if (isset($_SESSION['error_message'])) {
 
 		<div id="lycee" class="container-card-projet">
 			<card data-image="img-projet/pc1.jpg">
-				<h1 slot="header">Pao / Graphismes / Maquettes 3D</h1>
-				<p slot="content">J&#x27;ai conçu une maquette 3D pour une entreprise <br />J&#x27;ai appris la pao sur Correl Draw,</p>
+				<h1 slot="header">Graphisme</h1>
+				<p slot="content">J&#x27;ai conçu une maquette 3D pour une entreprise <br />J&#x27;ai appris la PAO (programmation assisté par ordinateur) sur Correl Draw,</p>
 			</card>
 			<card data-image="img-projet/montage.jpg">
 				<h1 slot="header">Cablages</h1>
-				<p slot="content">J&#x27;ai appris les différentes normes électriques ainsi que le câblage<br />d&#x27;enseignes a led / néon avec les différentes techniques,<br />lettres boitiers, caissons lumineux etc...</p>
+				<p slot="content">J&#x27;ai appris les différentes normes électriques ainsi que le câblage dans sa globalité avec les différentes techniques</p>
 			</card>
 			<card data-image="img-projet/adhesif.jpg">
 				<h1 slot="header">Adhésif / Impression</h1>
