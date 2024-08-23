@@ -12,6 +12,7 @@
 	"license": "ISC",
 	"dependencies": {
 		"bootstrap": "^5.3.2",
+		"gsap": "^3.12.5",
 		"scss": "^0.2.4"
 	}
 }

@@ -72,8 +72,10 @@ if (isset($_SESSION['error_message'])) {
 
 
 				<!--MACBOOK-->
-				<img src="img/Macbook-Pro---Copy1-1920x1080.png" loading="lazy" width="50%" sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1919px) 94vw, 1140px" alt="img-Macbook" srcset="img/Macbook-Pro---Copy1-1920x1080-p-500.png 500w, img/Macbook-Pro---Copy1-1920x1080-p-800.png 800w, img/Macbook-Pro---Copy1-1920x1080-p-1080.png 1080w, img/Macbook-Pro---Copy1-1920x1080-p-1600.png 1600w, img/Macbook-Pro---Copy1-1920x1080.png 1920w" class="macbook pt-5" />
 			</div>
+			<img id="macbook" src="img/Macbook-Pro---Copy1-1920x1080.png" loading="lazy" width="50%" sizes="(max-width: 479px) 94vw, (max-width: 767px) 96vw, (max-width: 1919px) 94vw, 1140px" alt="img-Macbook" srcset="img/Macbook-Pro---Copy1-1920x1080-p-500.png 500w, img/Macbook-Pro---Copy1-1920x1080-p-800.png 800w, img/Macbook-Pro---Copy1-1920x1080-p-1080.png 1080w, img/Macbook-Pro---Copy1-1920x1080-p-1600.png 1600w, img/Macbook-Pro---Copy1-1920x1080.png 1920w" class="macbook pt-5" />
+
+
 
 			<section class="mt-5">
 				<div class="d-flex justify-content-center align-items-center mx-4" style="height: 150vh">
@@ -243,6 +245,55 @@ if (isset($_SESSION['error_message'])) {
 		<script src="js/nav.js"></script>
 		<script src="js/slide.js"></script>
 		<script src="js/flowtech.js"></script>
+
+		<!---GSAP--->
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+		<script>
+			Draggable.create("#macbook", {
+				type: "rotation",
+				inertia: true,
+				onDragEnd: function () {
+					gsap.to("#macbook", { rotation: 0, duration: 1 });
+				}
+			});
+		</script>
+		<script>
+			// Enregistrer les positions initiales
+			const startInitialPosition = { x: 0, y: 0 };
+			const endInitialPosition = { x: 0, y: 0 };
+
+			// Créer le draggable pour #start
+			Draggable.create("#start", {
+				type: "x,y",
+				bounds: document.getElementById("container"),
+				inertia: true,
+				onDragEnd: function () {
+					gsap.to("#start", { x: startInitialPosition.x, y: startInitialPosition.y, duration: 1 });
+				},
+				onPress: function () {
+					// Enregistrer la position initiale lors du premier clic
+					startInitialPosition.x = this.x;
+					startInitialPosition.y = this.y;
+				}
+			});
+
+			// Créer le draggable pour #end
+			Draggable.create("#end", {
+				type: "x,y",
+				bounds: document.getElementById("container"),
+				inertia: true,
+				onDragEnd: function () {
+					gsap.to("#end", { x: endInitialPosition.x, y: endInitialPosition.y, duration: 1 });
+				},
+				onPress: function () {
+					// Enregistrer la position initiale lors du premier clic
+					endInitialPosition.x = this.x;
+					endInitialPosition.y = this.y;
+				}
+			});
+		</script>
 </body>
 
 </html>

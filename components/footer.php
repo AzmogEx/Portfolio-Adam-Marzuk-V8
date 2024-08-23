@@ -148,7 +148,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   div.bottom {
     min-width: 0;
-    overflow-x: scroll;
     padding: 1em;
     gap: 2em;
     color: grey;
