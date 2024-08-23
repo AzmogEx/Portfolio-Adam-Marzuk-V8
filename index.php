@@ -139,9 +139,9 @@ if (isset($_SESSION['error_message'])) {
 						<ul class="text-dark list">
 							<li>Travail en équipe</li>
 							<li>Cohésion de groupe</li>
-							<li>Extravertie</li>
+							<li>Extraverti</li>
 							<li>Autonome</li>
-							<li>Grande expériences</li>
+							<li>Grande expérience</li>
 							<li>Passionné</li>
 							<li>Organisé</li>
 						</ul>
@@ -179,7 +179,7 @@ if (isset($_SESSION['error_message'])) {
 			</card>
 			<card id="flowtech-card" data-image="img-projet/flowtech.png">
 				<h1 slot="header">Flowtech</h1>
-				<p slot="content">Projet de création d'une entreprise fictive FlowTech spécialisée dans le montage de PC, réalisé en JavaScript, PHP, HTML et CSS.</p>
+				<p slot="content">Projet de création d'une entreprise fictive FlowTech spécialisée dans le montage de PC, réalisé en JavaScript, PHP, HTML et CSS. Cliquez dessu pour découvrir !</p>
 			</card>
 		</div>
 
