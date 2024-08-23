@@ -155,9 +155,6 @@ if (isset($_SESSION['error_message'])) {
 				</h1>
 				<img src="img/presentation.png" loading="lazy" sizes="(max-width: 1919px) 100vw, 1140px" srcset="img/presentation-500.png 500w, img/presentation-800.png 800w, img/presentation-1080.png 1080w" alt="image presentation" class="image-presentation" />
 			</div>
-
-
-
 		</div>
 		<!--===============SECTION Projets===========-->
 		<div id="projet-nav"></div>
