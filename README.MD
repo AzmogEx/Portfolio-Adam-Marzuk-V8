@@ -35,6 +35,7 @@ npm run csscompile
 -   JS
 -   Bootsrap (installé via NPM)
 -   SASS
+-   GSAP
 
 ### Backend
 
