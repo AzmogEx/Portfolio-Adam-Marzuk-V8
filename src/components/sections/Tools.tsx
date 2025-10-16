@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { Tool, SoftSkill } from '@/types'
 import { ApiService } from '@/lib/api'
-import { 
-  Wrench, Heart, Code2, Users, 
+import {
+  Wrench, Heart, Code2, Users,
   Monitor, Globe, Database, Terminal,
   Palette, FileCode, Package, Zap,
   GitBranch, Cloud, Smartphone,
@@ -13,6 +13,7 @@ import {
   Target, Lightbulb, CheckCircle, Clock,
   TrendingUp, Award, Star, Puzzle
 } from 'lucide-react'
+import { BentoGrid, BentoCard, BentoCardHeader } from '@/components/ui/BentoGrid'
 
 const Tools = () => {
   const [tools, setTools] = useState<Tool[]>([])
@@ -32,13 +33,13 @@ const Tools = () => {
       'Node.js': <Terminal size={32} className="text-green-500" />,
       'Python': <Terminal size={32} className="text-blue-400" />,
       'Java': <Terminal size={32} className="text-orange-500" />,
-      
+
       // Bases de données
       'MongoDB': <Database size={32} className="text-green-600" />,
       'PostgreSQL': <Database size={32} className="text-blue-600" />,
       'MySQL': <Database size={32} className="text-orange-600" />,
       'Redis': <Database size={32} className="text-red-600" />,
-      
+
       // Outils de développement
       'Git': <GitBranch size={32} className="text-orange-500" />,
       'GitHub': <GitBranch size={32} className="text-gray-400" />,
@@ -46,23 +47,23 @@ const Tools = () => {
       'VS Code': <Monitor size={32} className="text-blue-400" />,
       'Figma': <Palette size={32} className="text-purple-500" />,
       'Postman': <Zap size={32} className="text-orange-500" />,
-      
+
       // Cloud et DevOps
       'AWS': <Cloud size={32} className="text-orange-400" />,
       'Azure': <Cloud size={32} className="text-blue-400" />,
       'Vercel': <Cloud size={32} className="text-white" />,
       'Netlify': <Cloud size={32} className="text-teal-400" />,
-      
+
       // Mobile
       'React Native': <Smartphone size={32} className="text-blue-400" />,
       'Flutter': <Smartphone size={32} className="text-blue-600" />,
-      
+
       // Autres
       'Photoshop': <Camera size={32} className="text-blue-600" />,
       'Illustrator': <Palette size={32} className="text-orange-600" />,
       'Premiere Pro': <Camera size={32} className="text-purple-600" />,
     }
-    
+
     // Recherche par nom exact ou par mots-clés
     const normalizedName = toolName.toLowerCase()
     for (const [key, icon] of Object.entries(iconMap)) {
@@ -70,7 +71,7 @@ const Tools = () => {
         return icon
       }
     }
-    
+
     // Fallback vers l'emoji original si aucune correspondance
     return <span className="text-3xl">{fallbackIcon}</span>
   }
@@ -89,14 +90,14 @@ const Tools = () => {
       'Motivation': <Target size={24} className="text-indigo-400" />,
       'Excellence': <Star size={24} className="text-yellow-500" />,
     }
-    
+
     const normalizedName = skillName.toLowerCase()
     for (const [key, icon] of Object.entries(iconMap)) {
       if (normalizedName.includes(key.toLowerCase()) || key.toLowerCase().includes(normalizedName)) {
         return icon
       }
     }
-    
+
     return <span className="text-2xl">{fallbackIcon}</span>
   }
 
@@ -107,11 +108,11 @@ const Tools = () => {
           ApiService.getTools(),
           ApiService.getSoftSkills()
         ])
-        
+
         if (toolsResult.success && toolsResult.data) {
           setTools(toolsResult.data.tools.sort((a, b) => a.order - b.order))
         }
-        
+
         if (skillsResult.success && skillsResult.data) {
           setSoftSkills(skillsResult.data.softSkills.sort((a, b) => a.order - b.order))
         }
@@ -121,7 +122,7 @@ const Tools = () => {
         setLoading(false)
       }
     }
-    
+
     fetchData()
   }, [])
 
@@ -133,6 +134,7 @@ const Tools = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -148,119 +150,113 @@ const Tools = () => {
             <div className="text-white text-xl">Chargement des outils et compétences...</div>
           </div>
         ) : (
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Outils de travail */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-6"
-          >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg">
-                <Wrench className="text-white" size={24} />
-              </div>
-              <h3 className="text-2xl font-bold text-white">Outils de travail</h3>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <>
+            <BentoGrid className="grid-cols-2 md:grid-cols-4 lg:grid-cols-6 mb-12">
+              {/* Header Card - Outils */}
+              <BentoCard
+                size="auto"
+                variant="gradient"
+                className="col-span-2 md:col-span-4 lg:col-span-6"
+                delay={0}
+              >
+                <BentoCardHeader
+                  icon={<Wrench size={24} />}
+                  title="Outils de travail"
+                  description="Technologies et outils que j'utilise quotidiennement"
+                />
+              </BentoCard>
+
+              {/* Outils - Grid */}
               {tools.map((tool, index) => (
-                <motion.div
+                <BentoCard
                   key={tool.name}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    y: -5,
-                    transition: { duration: 0.2 }
-                  }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="glass-card p-4 text-center hover:shadow-lg transition-all duration-300 border border-white/10 group cursor-pointer"
+                  size="1x1"
+                  variant="glass"
+                  className="flex flex-col items-center justify-center min-h-[140px] text-center"
+                  delay={0.05 + index * 0.03}
                 >
-                  <div className="mb-3 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                  <div className="mb-2">
                     {getToolIcon(tool.name, tool.icon)}
                   </div>
-                  <h4 className="text-white font-medium text-sm group-hover:text-blue-300 transition-colors">
+                  <h4 className="text-white font-medium text-sm">
                     {tool.name}
                   </h4>
-                </motion.div>
+                </BentoCard>
               ))}
-            </div>
-          </motion.div>
+            </BentoGrid>
 
-          {/* Soft Skills */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-6"
-          >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-2 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg">
-                <Heart className="text-white" size={24} />
-              </div>
-              <h3 className="text-2xl font-bold text-white">Soft Skills</h3>
-            </div>
-            
-            <div className="space-y-4">
+            <BentoGrid className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-12">
+              {/* Header Card - Soft Skills */}
+              <BentoCard
+                size="auto"
+                variant="gradient"
+                className="md:col-span-2 lg:col-span-3"
+                delay={0}
+              >
+                <BentoCardHeader
+                  icon={<Heart size={24} />}
+                  title="Soft Skills"
+                  description="Compétences relationnelles et qualités personnelles"
+                />
+              </BentoCard>
+
+              {/* Soft Skills - List */}
               {softSkills.map((skill, index) => (
-                <motion.div
+                <BentoCard
                   key={skill.name}
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  whileHover={{ 
-                    scale: 1.02,
-                    transition: { duration: 0.2 }
-                  }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="glass-card p-4 flex items-center gap-4 hover:shadow-lg transition-all duration-300 border border-white/10 group cursor-pointer"
+                  size="1x1"
+                  variant="glass"
+                  className="flex items-center gap-4 min-h-[100px]"
+                  delay={0.1 + index * 0.05}
                 >
-                  <div className="group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                  <div className="flex-shrink-0">
                     {getSoftSkillIcon(skill.name, skill.icon)}
                   </div>
-                  <div className="flex-1">
-                    <h4 className="text-white font-medium group-hover:text-purple-300 transition-colors">
-                      {skill.name}
-                    </h4>
-                  </div>
-                </motion.div>
+                  <h4 className="text-white font-medium flex-1">
+                    {skill.name}
+                  </h4>
+                </BentoCard>
               ))}
-            </div>
-          </motion.div>
-        </div>
+            </BentoGrid>
+
+            {/* Section informative - Bento Cards */}
+            <BentoGrid className="grid-cols-1 md:grid-cols-2">
+              <BentoCard
+                size="1x1"
+                variant="gradient"
+                className="flex flex-col items-center justify-center text-center min-h-[200px]"
+                delay={0.2}
+              >
+                <div className="mb-4">
+                  <div className="p-4 bg-white/10 rounded-2xl inline-block">
+                    <Code2 className="text-white" size={32} />
+                  </div>
+                </div>
+                <h4 className="text-xl font-bold text-white mb-3">Workflow</h4>
+                <p className="text-white/70 text-sm leading-relaxed max-w-xs">
+                  J&apos;utilise des outils modernes pour optimiser ma productivité et collaborer efficacement.
+                </p>
+              </BentoCard>
+
+              <BentoCard
+                size="1x1"
+                variant="gradient"
+                className="flex flex-col items-center justify-center text-center min-h-[200px]"
+                delay={0.3}
+              >
+                <div className="mb-4">
+                  <div className="p-4 bg-white/10 rounded-2xl inline-block">
+                    <Users className="text-white" size={32} />
+                  </div>
+                </div>
+                <h4 className="text-xl font-bold text-white mb-3">Esprit d&apos;équipe</h4>
+                <p className="text-white/70 text-sm leading-relaxed max-w-xs">
+                  Ma capacité d&apos;adaptation et ma communication me permettent de m&apos;intégrer facilement.
+                </p>
+              </BentoCard>
+            </BentoGrid>
+          </>
         )}
-
-        {/* Section informative */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-16 grid md:grid-cols-2 gap-8"
-        >
-          <div className="glass-card p-6 text-center">
-            <div className="flex justify-center mb-4">
-              <div className="p-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full">
-                <Code2 className="text-white" size={28} />
-              </div>
-            </div>
-            <h4 className="text-xl font-bold text-white mb-3">Workflow</h4>
-            <p className="text-white/70 text-sm leading-relaxed">
-              J&apos;utilise des outils modernes pour optimiser ma productivité et collaborer efficacement.
-            </p>
-          </div>
-
-          <div className="glass-card p-6 text-center">
-            <div className="flex justify-center mb-4">
-              <div className="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full">
-                <Users className="text-white" size={28} />
-              </div>
-            </div>
-            <h4 className="text-xl font-bold text-white mb-3">Esprit d&apos;équipe</h4>
-            <p className="text-white/70 text-sm leading-relaxed">
-              Ma capacité d&apos;adaptation et ma communication me permettent de m&apos;intégrer facilement.
-            </p>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

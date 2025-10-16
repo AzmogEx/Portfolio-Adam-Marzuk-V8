@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation'
 import { Experience as ExperienceType } from '@/types'
 import { ApiService } from '@/lib/api'
 import { ERROR_MESSAGES, LOADING_MESSAGES } from '@/lib/constants'
+import { BentoGrid, BentoCard, BentoCardHeader } from '@/components/ui/BentoGrid'
 
 const Experience = () => {
   const router = useRouter()
@@ -21,9 +22,9 @@ const Experience = () => {
         _setRefreshing(true)
         setError('')
       }
-      
+
       const result = await ApiService.getExperiences()
-      
+
       if (result.success && result.data) {
         setExperiences(result.data.experiences)
       } else {
@@ -53,7 +54,7 @@ const Experience = () => {
         fetchExperiences(true)
       }
     }
-    
+
     document.addEventListener('visibilitychange', handleVisibilityChange)
     return () => document.removeEventListener('visibilitychange', handleVisibilityChange)
   }, [fetchExperiences])
@@ -93,6 +94,7 @@ const Experience = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center gap-4 mb-4">
@@ -105,135 +107,173 @@ const Experience = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Expériences */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+        <BentoGrid className="grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Header - Expériences professionnelles */}
+          <BentoCard
+            size="auto"
+            variant="gradient"
+            className="md:col-span-2"
+            delay={0}
           >
-            <h3 className="text-2xl font-bold text-white mb-8 flex items-center">
-              <Building className="mr-3 text-blue-400" size={24} />
-              Expériences
-            </h3>
-            
-            <div className="space-y-8">
-              {workExperiences.length === 0 ? (
-                <div className="text-center text-white/70">
-                  Aucune expérience disponible pour le moment.
-                </div>
-              ) : (
-                workExperiences.map((exp, index) => (
-                  <motion.div
-                    key={exp.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="glass-card"
-                  >
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <h4 className="text-lg font-bold text-white">{exp.title}</h4>
-                        <p className="text-blue-400 font-medium">{exp.company}</p>
-                      </div>
-                      <div className="text-right">
-                        <div className="flex items-center text-white/60 text-sm mb-1">
-                          <Calendar size={14} className="mr-1" />
-                          <span>
-                            {new Date(exp.startDate).toLocaleDateString('fr-FR', { year: 'numeric', month: '2-digit' })} - {' '}
-                            {exp.endDate ? new Date(exp.endDate).toLocaleDateString('fr-FR', { year: 'numeric', month: '2-digit' }) : 'Présent'}
-                          </span>
-                        </div>
-                        <div className="flex items-center text-white/60 text-sm">
-                          <MapPin size={14} className="mr-1" />
-                          <span>{exp.location}</span>
-                        </div>
-                      </div>
+            <BentoCardHeader
+              icon={<Building size={24} />}
+              title="Expériences professionnelles"
+              description="Mon parcours en entreprise"
+            />
+          </BentoCard>
+
+          {/* Work Experiences */}
+          {workExperiences.length === 0 ? (
+            <BentoCard
+              size="auto"
+              variant="glass"
+              className="md:col-span-2"
+              delay={0.1}
+            >
+              <div className="text-center text-white/70">
+                Aucune expérience disponible pour le moment.
+              </div>
+            </BentoCard>
+          ) : (
+            workExperiences.map((exp, index) => (
+              <BentoCard
+                key={exp.id}
+                size="auto"
+                variant="glass"
+                className="flex flex-col min-h-[280px]"
+                delay={0.1 + index * 0.05}
+              >
+                <div className="flex-1">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-white mb-1">{exp.title}</h4>
+                      <p className="text-blue-400 font-medium text-sm">{exp.company}</p>
                     </div>
-                    
-                    <ul className="space-y-2 mb-4">
-                      {exp.description.map((desc, i) => (
-                        <li key={i} className="text-white/80 text-sm">
-                          • {desc}
+                  </div>
+
+                  <div className="flex flex-col gap-2 mb-4">
+                    <div className="flex items-center text-white/60 text-sm">
+                      <Calendar size={14} className="mr-2 text-blue-400" />
+                      <span>
+                        {new Date(exp.startDate).toLocaleDateString('fr-FR', { year: 'numeric', month: '2-digit' })} - {' '}
+                        {exp.endDate ? new Date(exp.endDate).toLocaleDateString('fr-FR', { year: 'numeric', month: '2-digit' }) : 'Présent'}
+                      </span>
+                    </div>
+                    <div className="flex items-center text-white/60 text-sm">
+                      <MapPin size={14} className="mr-2 text-purple-400" />
+                      <span>{exp.location}</span>
+                    </div>
+                  </div>
+
+                  <ul className="space-y-2 mb-4">
+                    {exp.description.map((desc, i) => (
+                      <li key={i} className="text-white/80 text-sm leading-relaxed flex items-start">
+                        <span className="text-blue-400 mr-2">•</span>
+                        <span className="flex-1">{desc}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {exp.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-1 bg-blue-500/10 text-blue-300 text-xs rounded-full border border-blue-500/30"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </BentoCard>
+            ))
+          )}
+
+          {/* Header - Formation */}
+          <BentoCard
+            size="auto"
+            variant="gradient"
+            className="md:col-span-2"
+            delay={0.2 + workExperiences.length * 0.05}
+          >
+            <BentoCardHeader
+              icon={<GraduationCap size={24} />}
+              title="Formation"
+              description="Mon parcours académique"
+            />
+          </BentoCard>
+
+          {/* Education Experiences */}
+          {educationExperiences.length === 0 ? (
+            <BentoCard
+              size="auto"
+              variant="glass"
+              className="md:col-span-2"
+              delay={0.3 + workExperiences.length * 0.05}
+            >
+              <div className="text-center text-white/70">
+                Aucune formation disponible pour le moment.
+              </div>
+            </BentoCard>
+          ) : (
+            educationExperiences.map((edu, index) => (
+              <BentoCard
+                key={edu.id}
+                size="auto"
+                variant="glass"
+                className="flex flex-col min-h-[220px]"
+                delay={0.3 + workExperiences.length * 0.05 + index * 0.05}
+              >
+                <div className="flex-1">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-white mb-1">{edu.title}</h4>
+                      <p className="text-purple-400 font-medium text-sm">{edu.company}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-2 mb-4">
+                    <div className="flex items-center text-white/60 text-sm">
+                      <Calendar size={14} className="mr-2 text-purple-400" />
+                      <span>
+                        {new Date(edu.startDate).toLocaleDateString('fr-FR', { year: 'numeric', month: '2-digit' })} - {' '}
+                        {edu.endDate ? new Date(edu.endDate).toLocaleDateString('fr-FR', { year: 'numeric', month: '2-digit' }) : 'Présent'}
+                      </span>
+                    </div>
+                    <div className="flex items-center text-white/60 text-sm">
+                      <MapPin size={14} className="mr-2 text-blue-400" />
+                      <span>{edu.location}</span>
+                    </div>
+                  </div>
+
+                  {edu.description && edu.description.length > 0 && (
+                    <ul className="space-y-2">
+                      {edu.description.map((desc, i) => (
+                        <li key={i} className="text-white/80 text-sm leading-relaxed flex items-start">
+                          <span className="text-purple-400 mr-2">•</span>
+                          <span className="flex-1">{desc}</span>
                         </li>
                       ))}
                     </ul>
-                    
-                    <div className="flex flex-wrap gap-2">
-                      {exp.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2 py-1 bg-white/10 text-white/80 text-xs rounded-md"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </motion.div>
-                ))
-              )}
-            </div>
-          </motion.div>
-
-          {/* Formation */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h3 className="text-2xl font-bold text-white mb-8 flex items-center">
-              <GraduationCap className="mr-3 text-purple-400" size={24} /> Formation
-            </h3>
-            
-            <div className="space-y-8">
-              {educationExperiences.length === 0 ? (
-                <div className="text-center text-white/70">
-                  Aucune formation disponible pour le moment.
+                  )}
                 </div>
-              ) : (
-                educationExperiences.map((edu, index) => (
-                  <motion.div
-                    key={edu.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="glass-card"
-                  >
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <h4 className="text-lg font-bold text-white">{edu.title}</h4>
-                        <p className="text-purple-400 font-medium">{edu.company}</p>
-                      </div>
-                      <div className="text-right">
-                        <div className="flex items-center text-white/60 text-sm mb-1">
-                          <Calendar size={14} className="mr-1" />
-                          <span>
-                            {new Date(edu.startDate).toLocaleDateString('fr-FR', { year: 'numeric', month: '2-digit' })} - {' '}
-                            {edu.endDate ? new Date(edu.endDate).toLocaleDateString('fr-FR', { year: 'numeric', month: '2-digit' }) : 'Présent'}
-                          </span>
-                        </div>
-                        <div className="flex items-center text-white/60 text-sm">
-                          <MapPin size={14} className="mr-1" />
-                          <span>{edu.location}</span>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {edu.description && edu.description.length > 0 && (
-                      <ul className="space-y-2 mb-4">
-                        {edu.description.map((desc, i) => (
-                          <li key={i} className="text-white/80 text-sm">
-                            • {desc}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </motion.div>
-                ))
-              )}
-            </div>
-          </motion.div>
-        </div>
+
+                {edu.technologies && edu.technologies.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {edu.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-1 bg-purple-500/10 text-purple-300 text-xs rounded-full border border-purple-500/30"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </BentoCard>
+            ))
+          )}
+        </BentoGrid>
       </div>
     </section>
   )
