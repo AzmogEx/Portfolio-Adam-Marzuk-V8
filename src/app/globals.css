@@ -3,6 +3,36 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Dark theme (default) */
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --text-tertiary: rgba(255, 255, 255, 0.5);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .light {
+    /* Light theme */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #e2e8f0;
+    --text-primary: #0f172a;
+    --text-secondary: rgba(15, 23, 42, 0.8);
+    --text-tertiary: rgba(15, 23, 42, 0.6);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+  }
+
+  * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
   body {
     background: linear-gradient(to bottom right, #0f172a, #3b2865, #0c4a6e);
     min-height: 100vh;
@@ -11,6 +41,10 @@
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
     overflow-x: hidden;
+  }
+
+  .light body {
+    background: linear-gradient(to bottom right, #e0f2fe, #ddd6fe, #fce7f3);
   }
 }
 
